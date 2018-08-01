@@ -1,9 +1,9 @@
 # Windows IoT Core Device Management Bridge
 
 - [Overview](#overview)
-    - [Architecture](#solution-architecture)
+    - [Architecture](#architecture)
     - [Getting Started](#getting-started)
-        - [DMBridge.exe](#dmbridge.exe)
+        - [DMBridge Executable](#dmbridge-executable)
         - [UWP](#uwp)
         - [Non-UWP](#non-uwp)
 - [Other Documentation](#other-documentation)
@@ -37,7 +37,7 @@ a UWP application.
 ![architecture diagram](docs/dm-architecture.jpg)
 
 ### Getting Started
-#### DMBridge.exe
+#### DMBridge Exeutable
 If an application calls a DM Bridge API while `DMBridge.exe` is not running, a
 `COMException` with the message `the rpc server is unavailable` will be thrown.
 Ensure `DMBridge.exe` is either installed and running as a service, or is
