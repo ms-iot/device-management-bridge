@@ -1,0 +1,9 @@
+namespace DMBridgeComponent
+{
+    [default_interface]
+    runtimeclass ComputerName 
+    {
+        ComputerName();
+        Int32 MyProperty;
+    }
+}

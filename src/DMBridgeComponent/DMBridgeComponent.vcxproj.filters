@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>accd3aa8-1ba0-4223-9bbe-0c431709210b</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API">
+      <UniqueIdentifier>{3c235b3b-8ab2-492f-b546-ccbaff0a4136}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Generated Files\module.g.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DMBridgeInterface\DMBridgeInterface_c.c" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RpcUtilities.cpp" />
+    <ClCompile Include="ComputerNameBridge.cpp" />
+    <ClCompile Include="NTServiceBridge.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="RpcUtilities.h" />
+    <ClInclude Include="ComputerNameBridge.h" />
+    <ClInclude Include="NTServiceBridge.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="NTServiceBridge.idl">
+      <Filter>API</Filter>
+    </Midl>
+    <Midl Include="ComputerNameBridge.idl">
+      <Filter>API</Filter>
+    </Midl>
+    <Midl Include="TelemetryLevelBridge.idl">
+      <Filter>API</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DMBridgeComponent.def" />
+  </ItemGroup>
+</Project>

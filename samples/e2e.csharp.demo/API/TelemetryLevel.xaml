@@ -1,0 +1,38 @@
+﻿<local:BaseAPIPage
+    x:Class="e2e.csharp.demo.API.TelemetryLevel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:e2e.csharp.demo.API"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Required">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="40" />
+            <RowDefinition Height="Auto" MinHeight="40" />
+            <RowDefinition Height="Auto" MinHeight="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="200"/>
+            <ColumnDefinition Width="Auto" MinWidth="200" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="0" Text="Telemetry Level" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="0,0,10,0"/>
+        <TextBlock Name="CurrentTelemetryLevel" HorizontalAlignment="Left" Grid.Column="1"  Grid.Row="0" Text="{x:Bind TelemetryLevelViewModel.Status, Mode=OneWay}" TextAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" Height="20" Width="165" Margin="10,0,0,0"/>
+
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="1" Text="New Telemetry Level" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="0,0,10,0"/>
+
+        <StackPanel  Grid.Row="1" Grid.Column="1">
+            <RadioButton Name="SecurityLevelRadioButton" GroupName="Level" Content="Security" Checked="HandleLevelCheck"/>
+            <RadioButton Name="BasicLevelRadioButton" GroupName="Level" Content="Basic" Checked="HandleLevelCheck"/>
+            <RadioButton Name="EnhancedLevelRadioButton" GroupName="Level" Content="Enhanced" Checked="HandleLevelCheck"/>
+            <RadioButton Name="FullLevelRadioButton" GroupName="Level" Content="Full" Checked="HandleLevelCheck"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="2" Text="Status" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="0,0,10,0"/>
+        <TextBlock Name="StatusText" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Text="{x:Bind ViewModel.Status, Mode=OneWay}" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10,0,0,0"/>
+
+    </Grid>
+</local:BaseAPIPage>
