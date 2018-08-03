@@ -73,4 +73,4 @@ property for a user-friendly description of the error.
 ## API Documentation
 - [Computer Name](dm-uwp-api/dm-uwp-api-computername.md)
 - [Service Manager](dm-uwp-api/dm-uwp-api-servicemanager.md)
-- [Telemetry Level](dm-upp-api/dm-uwp-api-telemetrylevel.md)
+- [Telemetry Level](dm-uwp-api/dm-uwp-api-telemetrylevel.md)
