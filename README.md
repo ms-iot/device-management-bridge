@@ -37,6 +37,12 @@ a UWP application.
 ![architecture diagram](docs/dm-architecture.jpg)
 
 ### Getting Started
+
+#### Dev Machine Setup
+
+- Visual Studio 15.9.6
+- Windows SDK 10.0.17134.0
+
 #### DMBridge Executable
 If an application calls a DM Bridge API while `DMBridge.exe` is not running, a
 `COMException` with the message `the rpc server is unavailable` will be thrown.
