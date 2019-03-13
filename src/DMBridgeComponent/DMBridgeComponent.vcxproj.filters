@@ -21,12 +21,14 @@
     <ClCompile Include="RpcUtilities.cpp" />
     <ClCompile Include="ComputerNameBridge.cpp" />
     <ClCompile Include="NTServiceBridge.cpp" />
+    <ClCompile Include="TelemetryLevelBridge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="RpcUtilities.h" />
     <ClInclude Include="ComputerNameBridge.h" />
     <ClInclude Include="NTServiceBridge.h" />
+    <ClInclude Include="TelemetryLevelBridge.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="NTServiceBridge.idl">
@@ -41,5 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DMBridgeComponent.def" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
