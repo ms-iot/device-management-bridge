@@ -50,18 +50,18 @@
       <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Stub</GenerateServerFiles>
       <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Stub</GenerateClientFiles>
       <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Stub</GenerateServerFiles>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DMBridgeInterface_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DMBridgeInterface_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DMBridgeInterface_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DMBridgeInterface_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">DMBridgeInterface_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">DMBridgeInterface_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">DMBridgeInterface_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">DMBridgeInterface_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DMBridgeInterface_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DMBridgeInterface_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DMBridgeInterface_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DMBridgeInterface_s.c</ServerStubFile>
+      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
+      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
+      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
+      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
+      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
+      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
     </Midl>
     <Midl Include="NTServiceInterface.idl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>

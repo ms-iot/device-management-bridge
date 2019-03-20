@@ -258,3 +258,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/src/DMBridgeInterface/DMBridgeInterface_x64_s.c
+/src/DMBridgeInterface/DMBridgeInterface_x64_c.c
+/src/DMBridgeInterface/DMBridgeInterface_Win32_s.c
+/src/DMBridgeInterface/DMBridgeInterface_Win32_c.c
+/src/DMBridgeInterface/DMBridgeInterface_ARM_s.c
+/src/DMBridgeInterface/DMBridgeInterface_ARM_c.c
+/src/DMBridgeComponent/Generated Files

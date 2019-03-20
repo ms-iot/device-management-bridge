@@ -16,6 +16,13 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // DMBridgeInterface_c.c expects _ARM_ to be set when building for ARM.
 #ifdef _M_ARM
 #define _ARM_ 1
+#include "DMBridgeInterface_ARM_c.c"
 #endif
 
-#include "DMBridgeInterface_c.c"
+#if defined(_M_AMD64)
+#include "DMBridgeInterface_x64_c.c"
+#endif
+
+#if !defined(_M_IA64) && !defined(_M_AMD64) && !defined(_ARM_)
+#include "DMBridgeInterface_Win32_c.c"
+#endif
