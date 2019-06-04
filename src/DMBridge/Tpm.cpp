@@ -47,32 +47,36 @@ HRESULT GetConnectionStringRpc(_In_ handle_t, INT32 slot, int expiryInSeconds, _
 }
 /* -------------------------------------------- */
 
-Json::Value JsonObjectFromString(const string& stringValue)
+HRESULT JsonObjectFromString(const string& stringValue, Json::Value& root)
 {
     istringstream payloadStream(stringValue);
-    Json::Value root;
     string errorsList;
     Json::CharReaderBuilder builder;
     if (!Json::parseFromStream(builder, payloadStream, &root, &errorsList))
     {
-        throw exception("Failed to parse json.");
+        return E_FAIL;
     }
-    return root;
+    return S_OK;
 }
 
 HRESULT TpmInfoFromLimpet(
-    const string& output,
+    const string& limpetJsonOutput,
     string& ek,
     string& regId)
 {
-    Json::Value jsonArray = JsonObjectFromString(output);
+    Json::Value jsonArray;
+    HRESULT hr = JsonObjectFromString(limpetJsonOutput, jsonArray);
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
     if (jsonArray.isNull() || !jsonArray.isArray())
     {
         return E_FAIL;
     }
 
     Json::Value jsonObject;
-
     for (Json::Value::const_iterator it = jsonArray.begin(); it != jsonArray.end(); ++it)
     {
         // One element only...
