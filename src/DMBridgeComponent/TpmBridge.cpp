@@ -23,9 +23,9 @@ using namespace RpcUtils;
 namespace winrt::DMBridgeComponent::implementation
 {
     /// <remarks>
-    /// Retrieve the NetBIOS name of the computer.
+    /// Retrieve the endorsement key from the TPM.
     /// <remarks>
-    /// <returns>The local computer name.</returns>
+    /// <returns>The endorsement key.</returns>
     winrt::hstring TpmBridge::GetEndorsementKey()
     {
         wchar_t* ekPtr = NULL;
@@ -42,9 +42,9 @@ namespace winrt::DMBridgeComponent::implementation
     }
 
     /// <remarks>
-    /// Retrieve the NetBIOS name of the computer.
+    /// Retrieve the registration id from the TPM.
     /// <remarks>
-    /// <returns>The local computer name.</returns>
+    /// <returns>The registration id.</returns>
     hstring TpmBridge::GetRegistrationId()
     {
         wchar_t* regIdPtr = NULL;
@@ -61,9 +61,9 @@ namespace winrt::DMBridgeComponent::implementation
     }
 
     /// <remarks>
-    /// Retrieve the NetBIOS name of the computer.
+    /// Retrieve the connection string from the TPM.
     /// <remarks>
-    /// <returns>The local computer name.</returns>
+    /// <returns>The connection string.</returns>
     hstring TpmBridge::GetConnectionString(INT32 slot, int expiryInSeconds)
     {
         wchar_t* csPtr = NULL;
