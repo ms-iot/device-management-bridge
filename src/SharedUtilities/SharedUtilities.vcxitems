@@ -17,6 +17,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)DMBridgeException.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DMProcess.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ETWLogger.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
@@ -41,6 +42,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)AutoCloseHandle.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Constants.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DMBridgeException.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DMProcess.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ETWLogger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)JoiningThread.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)json\json-forwards.h" />

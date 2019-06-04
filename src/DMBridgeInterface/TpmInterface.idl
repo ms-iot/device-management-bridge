@@ -13,10 +13,14 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import "oaidl.idl";
-import "unknwn.idl";
-
-#include "NTServiceInterface.idl"
-#include "ComputerNameInterface.idl"
-#include "TelemetryInterface.idl"
-#include "TpmInterface.idl"
+[
+	uuid (7A6B9523-72AA-4D5F-B68A-A5EAA91450D6),
+	version(1.0),
+	pointer_default(unique),
+]
+interface Tpm
+{
+    HRESULT GetEndorsementKeyRpc([out] int *size, [out, size_is(, *size)] wchar_t **endorsementKey);
+    HRESULT GetRegistrationIdRpc([out] int *size, [out, size_is(, *size)] wchar_t **registrationId);
+    HRESULT GetConnectionStringRpc([in] INT32 slot, [in] int expiryInSeconds, [out] int *size, [out, size_is(, *size)] wchar_t **connectionString);
+}

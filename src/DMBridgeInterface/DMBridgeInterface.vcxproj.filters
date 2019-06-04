@@ -20,6 +20,9 @@
     <Midl Include="TelemetryInterface.idl">
       <Filter>API</Filter>
     </Midl>
+    <Midl Include="TpmInterface.idl">
+      <Filter>API</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RpcConstants.h" />

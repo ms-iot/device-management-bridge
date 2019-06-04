@@ -33,6 +33,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)jsoncpp.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DMProcess.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)AutoCloseHandle.h">
@@ -70,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)json\json-forwards.h">
       <Filter>Headers\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)DMProcess.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

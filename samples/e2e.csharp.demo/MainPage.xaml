@@ -23,8 +23,8 @@
         <SplitView Grid.Row="1" 
                    Name="MySplitView"
                    DisplayMode="CompactOverlay" 
-                   OpenPaneLength="200" 
-                   CompactPaneLength="200">
+                   OpenPaneLength="250" 
+                   CompactPaneLength="250">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" 
                          SelectionChanged="ListBox_SelectionChanged">
@@ -36,6 +36,9 @@
                     </ListBoxItem>
                     <ListBoxItem Name="TelemetryLevelBox">
                         <TextBlock FontSize="20" Margin="20,0,0,0">Telemetry Level</TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem Name="TpmBox">
+                        <TextBlock FontSize="20" Margin="20,0,0,0">TPM</TextBlock>
                     </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>

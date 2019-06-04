@@ -30,54 +30,21 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ComputerNameInterface.idl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Midl>
-    <Midl Include="DMBridgeInterface.idl">
-      <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Stub</GenerateClientFiles>
-      <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Stub</GenerateServerFiles>
-      <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Stub</GenerateClientFiles>
-      <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Stub</GenerateServerFiles>
-      <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Stub</GenerateClientFiles>
-      <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Stub</GenerateServerFiles>
-      <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Stub</GenerateClientFiles>
-      <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Stub</GenerateServerFiles>
-      <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Stub</GenerateClientFiles>
-      <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Stub</GenerateServerFiles>
-      <GenerateClientFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Stub</GenerateClientFiles>
-      <GenerateServerFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Stub</GenerateServerFiles>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
-      <ClientStubFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
-      <ServerStubFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
+      <ExcludedFromBuild>true</ExcludedFromBuild>
     </Midl>
     <Midl Include="NTServiceInterface.idl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild>true</ExcludedFromBuild>
     </Midl>
     <Midl Include="TelemetryInterface.idl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </Midl>
+    <Midl Include="TpmInterface.idl">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </Midl>
+    <Midl Include="DMBridgeInterface.idl">
+      <GenerateClientFiles>Stub</GenerateClientFiles>
+      <ClientStubFile>DMBridgeInterface_$(Platform)_c.c</ClientStubFile>
+      <ServerStubFile>DMBridgeInterface_$(Platform)_s.c</ServerStubFile>
     </Midl>
   </ItemGroup>
   <ItemGroup>

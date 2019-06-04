@@ -1,5 +1,5 @@
 /*
-Copyright 2018 Microsoft
+Copyright 2017 Microsoft
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 and associated documentation files (the "Software"), to deal in the Software without restriction,
 including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -13,10 +13,23 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import "oaidl.idl";
-import "unknwn.idl";
+#pragma once
 
-#include "NTServiceInterface.idl"
-#include "ComputerNameInterface.idl"
-#include "TelemetryInterface.idl"
-#include "TpmInterface.idl"
+#include <string>
+#include <windows.h>
+
+class Process
+{
+public:
+    static void Launch(
+        const std::wstring& commandString,
+        unsigned long& returnCode,
+        std::string& output);
+
+    static bool IsProcessRunning(
+        const std::wstring& processName);
+
+    static std::wstring GetProcessExePath(
+        DWORD processID);
+};
+

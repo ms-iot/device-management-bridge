@@ -104,6 +104,9 @@
     <Compile Include="API\TelemetryLevel.xaml.cs">
       <DependentUpon>TelemetryLevel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="API\TPM.xaml.cs">
+      <DependentUpon>TPM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="API\TelemetryLevel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="API\TPM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,10 +13,19 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import "oaidl.idl";
-import "unknwn.idl";
+#pragma once
 
-#include "NTServiceInterface.idl"
-#include "ComputerNameInterface.idl"
-#include "TelemetryInterface.idl"
-#include "TpmInterface.idl"
+#include "stdafx.h"
+
+class Tpm
+{
+public:
+    static HRESULT GetEndorsementKey(_Outptr_ int &size, _Outptr_ wchar_t *&ek);
+    static HRESULT GetRegistrationId(_Outptr_ int &size, _Outptr_ wchar_t *&regId);
+    static HRESULT GetConnectionString(_In_ int slot, _In_ int expiryInSeconds, _Outptr_ int &size, _Outptr_ wchar_t *&cs);
+private:
+    static HRESULT WriteRpcOutputString(const std::wstring& value, _Outptr_ int &rawValueSize, _Outptr_ wchar_t *&rawValue);
+    static std::string Tpm::RunLimpet(const std::wstring& params);
+    static HRESULT GetHostNameAndDeviceId(int logicalId, std::string& serviceUrl);
+    static HRESULT GetSASToken(int logicalId, unsigned int durationInSeconds, std::string& sasToken);
+};

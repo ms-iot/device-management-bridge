@@ -22,6 +22,7 @@
     <ClCompile Include="ComputerNameBridge.cpp" />
     <ClCompile Include="NTServiceBridge.cpp" />
     <ClCompile Include="TelemetryLevelBridge.cpp" />
+    <ClCompile Include="TpmBridge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -29,6 +30,7 @@
     <ClInclude Include="ComputerNameBridge.h" />
     <ClInclude Include="NTServiceBridge.h" />
     <ClInclude Include="TelemetryLevelBridge.h" />
+    <ClInclude Include="TpmBridge.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="NTServiceBridge.idl">
@@ -38,6 +40,9 @@
       <Filter>API</Filter>
     </Midl>
     <Midl Include="TelemetryLevelBridge.idl">
+      <Filter>API</Filter>
+    </Midl>
+    <Midl Include="TpmBridge.idl">
       <Filter>API</Filter>
     </Midl>
   </ItemGroup>

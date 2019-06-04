@@ -164,6 +164,10 @@
       <DependentUpon>TelemetryLevelBridge.idl</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="TpmBridge.h">
+      <DependentUpon>TpmBridge.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\DMBridgeInterface\DMBridgeInterface_$(Platform)_c.c">
@@ -197,6 +201,10 @@
       <DependentUpon>TelemetryLevelBridge.idl</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="TpmBridge.cpp">
+      <DependentUpon>TpmBridge.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ComputerNameBridge.idl">
@@ -206,6 +214,9 @@
       <SubType>Designer</SubType>
     </Midl>
     <Midl Include="TelemetryLevelBridge.idl">
+      <SubType>Designer</SubType>
+    </Midl>
+    <Midl Include="TpmBridge.idl">
       <SubType>Designer</SubType>
     </Midl>
   </ItemGroup>

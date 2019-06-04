@@ -66,6 +66,9 @@
     <ClInclude Include="TelemetryLevel.h">
       <Filter>Header Files\API</Filter>
     </ClInclude>
+    <ClInclude Include="Tpm.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -78,9 +81,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DMBridgeServer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\DMBridgeInterface\DMBridgeInterface_s.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ComputerName.cpp">
@@ -99,6 +99,12 @@
       <Filter>Source Files\Config</Filter>
     </ClCompile>
     <ClCompile Include="TelemetryLevel.cpp">
+      <Filter>Source Files\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DMBridgeInterface\DMBridgeInterface_$(Platform)_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tpm.cpp">
       <Filter>Source Files\API</Filter>
     </ClCompile>
   </ItemGroup>

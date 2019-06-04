@@ -1,0 +1,31 @@
+﻿<local:BaseAPIPage
+    x:Class="e2e.csharp.demo.API.TPM"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:e2e.csharp.demo.API"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="160" />
+            <RowDefinition Height="Auto" MinHeight="80" />
+            <RowDefinition Height="Auto" MinHeight="120" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="200"/>
+            <ColumnDefinition Width="Auto" MinWidth="200" />
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="0" Text="Endorsement Key" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="5,5,10,5"/>
+        <TextBox Name="EndorsementKey" Grid.Column="1" Grid.Row="0" Text="{x:Bind TpmViewModel.Status, Mode=OneWay}" IsReadOnly="True" TextWrapping="Wrap" Width="800" Margin="10,5,5,5"/>
+
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="1" Text="Registration Id" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="5,5,10,5"/>
+        <TextBox Name="RegId" Grid.Column="1" Grid.Row="1" Text="{x:Bind TpmViewModel.Status, Mode=OneWay}" IsReadOnly="True" TextWrapping="NoWrap" Width="800" Margin="10,5,5,5"/>
+
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="2" Text="Connection String" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="5,5,10,5"/>
+        <TextBox Name="ConnectionString" Grid.Column="1" Grid.Row="2" Text="{x:Bind TpmViewModel.Status, Mode=OneWay}" IsReadOnly="True" TextWrapping="Wrap" Width="800" Margin="10,5,5,5"/>
+
+    </Grid>
+</local:BaseAPIPage>

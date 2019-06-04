@@ -38,6 +38,8 @@ namespace e2e.csharp.demo
                 MyFrame.Navigate(typeof(ComputerName));
             else if (TelemetryLevelBox.IsSelected)
                 MyFrame.Navigate(typeof(TelemetryLevel));
+            else if (TpmBox.IsSelected)
+                MyFrame.Navigate(typeof(TPM));
         }
     }
 }

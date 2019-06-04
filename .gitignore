@@ -265,3 +265,4 @@ __pycache__/
 /src/DMBridgeInterface/DMBridgeInterface_ARM_s.c
 /src/DMBridgeInterface/DMBridgeInterface_ARM_c.c
 /src/DMBridgeComponent/Generated Files
+/src/DMBridgeInterface/DMBridgeInterface_h.h
