@@ -32,6 +32,16 @@ namespace e2e.csharp.demo.API
         SERVICE_STOPPED = 0x00000001
     }
 
+    // https://docs.microsoft.com/en-us/windows/desktop/api/winsvc/nf-winsvc-changeserviceconfiga
+    public enum ServiceStartType
+    {
+        SERVICE_START_AUTO = 0x00000002,
+        SERVICE_START_BOOT = 0x00000000,
+        SERVICE_START_DEMAND = 0x00000003,
+        SERVICE_DISABLED = 0x00000004,
+        SERVICE_START_SYSTEM = 0x00000001
+    }
+
     public sealed partial class NTService : BaseAPIPage
     {
         private readonly NTServiceBridge _ntServiceBridge;
@@ -62,5 +72,37 @@ namespace e2e.csharp.demo.API
                 return status.ToString();
             });
         }
+
+        private async void SetStartTypeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (StartTypeCombo.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            var service = ServiceName.Text;
+            int startType = 0;
+            switch (StartTypeCombo.SelectedIndex)
+            {
+                case 0: // auto
+                    startType = (int)ServiceStartType.SERVICE_START_AUTO;
+                    break;
+                case 1:
+                    startType = (int)ServiceStartType.SERVICE_START_BOOT;
+                    break;
+                case 2:
+                    startType = (int)ServiceStartType.SERVICE_START_DEMAND;
+                    break;
+                case 3:
+                    startType = (int)ServiceStartType.SERVICE_START_SYSTEM;
+                    break;
+                case 4:
+                    startType = (int)ServiceStartType.SERVICE_DISABLED;
+                    break;
+            }
+            await base.RunAPIInBackground(() => { _ntServiceBridge.SetStartMode(service, startType); });
+        }
+
+
     }
 }

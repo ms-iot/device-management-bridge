@@ -15,18 +15,19 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 namespace DMBridgeComponent
 {
-	[default_interface]
-	runtimeclass NTServiceBridge : INTService, Windows.Foundation.IClosable
-	{
-		NTServiceBridge();
-	}
+    [default_interface]
+    runtimeclass NTServiceBridge : INTService, Windows.Foundation.IClosable
+    {
+        NTServiceBridge();
+    }
 
-	[version(1.0)]
-	[uuid(d156af6c-c5ca-4fc0-99ae-83ee9c7cff2f)]
-	interface INTService : IInspectable
-	{
-		HRESULT Start([in] HSTRING serviceName);
-		HRESULT Stop([in] HSTRING serviceName);
-		HRESULT Query([in] HSTRING serviceName,[out, retval] INT32 *status);
-	}
+    [version(1.0)]
+    [uuid(d156af6c-c5ca-4fc0-99ae-83ee9c7cff2f)]
+    interface INTService : IInspectable
+    {
+        HRESULT Start([in] HSTRING serviceName);
+        HRESULT Stop([in] HSTRING serviceName);
+        HRESULT Query([in] HSTRING serviceName,[out, retval] INT32 *status);
+        HRESULT SetStartMode([in] HSTRING serviceName, [in] INT32 mode);
+    }
 }

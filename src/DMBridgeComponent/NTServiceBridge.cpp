@@ -65,4 +65,18 @@ namespace winrt::DMBridgeComponent::implementation
 
 		return status;
 	}
+
+    /// <summary>
+    /// Set the start type of a specific service.
+    /// </summary>
+    /// <param name='serviceName'>The service name to query, it is case insensitive. Has a max length of 256 characters, and cannot include the forward or backward slash.</param>
+    /// <return>An integer representing the required service start type. See https://docs.microsoft.com/en-us/windows/desktop/api/winsvc/nf-winsvc-changeserviceconfiga for the possible values.</return>
+    /// <exception cref="ERROR_INVALID_SERVICENAME">Thrown if serviceName is an invalid length or has illegal characters.</exception>
+    void NTServiceBridge::SetStartMode(winrt::hstring serviceName, int32_t mode)
+    {
+        wchar_t* cName = const_cast<wchar_t*>(serviceName.c_str());
+        check_hresult(
+            RpcNormalize(::SetServiceStartModeRpc, this->rpcBinding, cName, mode));
+    }
+
 }

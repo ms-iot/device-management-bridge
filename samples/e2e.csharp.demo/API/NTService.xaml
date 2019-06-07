@@ -14,6 +14,7 @@
             <RowDefinition Height="Auto" MinHeight="40" />
             <RowDefinition Height="Auto" MinHeight="40" />
             <RowDefinition Height="Auto" MinHeight="40" />
+            <RowDefinition Height="Auto" MinHeight="40" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
@@ -28,10 +29,18 @@
         <Button Name="QueryButton" Content="Query" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  Click="QueryButton_Click" Margin="10,0,10,0"/>
         <Button Name="StopButton" Content="Stop" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Width="100" Click="StopButton_Click" Margin="10,0,0,0"/>
 
-
         <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="2" Text="Status" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="0,0,10,0"/>
         <TextBlock Name="StatusText" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" Text="{x:Bind ViewModel.Status, Mode=OneWay}" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
 
-        
+        <TextBlock HorizontalAlignment="Right" Grid.Column="0"  Grid.Row="3" Text="Start Type" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="165" Margin="0,0,10,0"/>
+        <ComboBox Name="StartTypeCombo" HorizontalAlignment="Right" Grid.Column="1"  Grid.Row="3">
+            <ComboBoxItem>Auto</ComboBoxItem>
+            <ComboBoxItem>Boot</ComboBoxItem>
+            <ComboBoxItem>Demand</ComboBoxItem>
+            <ComboBoxItem>System</ComboBoxItem>
+            <ComboBoxItem>Disabled</ComboBoxItem>
+        </ComboBox>
+        <Button Name="SetStartTypeButton" Content="Set" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Width="100" Click="SetStartTypeButton_Click" Margin="10,0,0,0"/>
+
     </Grid>
 </local:BaseAPIPage>

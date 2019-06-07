@@ -29,6 +29,7 @@ namespace winrt::DMBridgeComponent::implementation
 		void Start(winrt::hstring serviceName);
 		void Stop(winrt::hstring serviceName);
 		int32_t Query(winrt::hstring serviceName);
+        void SetStartMode(winrt::hstring serviceName, int32_t mode);
 
 		void Close()
 		{

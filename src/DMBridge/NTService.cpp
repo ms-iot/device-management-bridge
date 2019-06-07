@@ -39,6 +39,12 @@ HRESULT QueryServiceRpc(_In_ handle_t, _In_ wchar_t* serviceName, _Outptr_ INT32
 {
 	return NTService::Query(serviceName, status);
 }
+
+HRESULT SetServiceStartModeRpc(_In_ handle_t, _In_ wchar_t* serviceName, _In_ INT32 status)
+{
+    return NTService::SetStartMode(serviceName, status);
+}
+
 /* -------------------------------------------- */
 
 HRESULT NTService::Start(_In_ const wstring& serviceName)
@@ -160,6 +166,42 @@ HRESULT NTService::Query(_In_ const wstring& serviceName, _Outptr_ INT32* status
 	}
 
 	return S_OK;
+}
+
+HRESULT NTService::SetStartMode(_In_ const std::wstring& serviceName, _In_ INT32 status)
+{
+    TRACEP(L"Query request for: ", serviceName);
+    HRESULT result = ValidateNameArgument(serviceName, false);
+    if (result != S_OK)
+        return result;
+
+    try
+    {
+        ServiceManager::SetStartType(serviceName, status);
+    }
+    catch (const DMBridgeExceptionWithErrorCode& e)
+    {
+        TRACEP("Failed to set service start type. Exception caught. Error: ", e.ErrorCode());
+        // Prevent a 0'd error from returning S_OK
+        if (e.ErrorCode() == 0)
+        {
+            return E_FAIL;
+        }
+        return HRESULT_FROM_WIN32(e.ErrorCode());
+    }
+    catch (...)
+    {
+        DWORD lastError = GetLastError();
+        TRACEP("Failed to set service start type. Unknown exception caught. Error: ", lastError);
+        // Prevent a 0'd last error from returning S_OK
+        if (lastError == 0)
+        {
+            return E_FAIL;
+        }
+        return HRESULT_FROM_WIN32(lastError);
+    }
+
+    return S_OK;
 }
 
 HRESULT NTService::ValidateNameArgument(_In_ const wstring& serviceName, _In_ const bool enforceWhitelist)

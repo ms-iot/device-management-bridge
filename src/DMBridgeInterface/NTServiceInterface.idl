@@ -14,13 +14,14 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 [
-	uuid (24E7B77E-433B-45A8-9579-7FBDE8B5C153),
-	version(1.0),
-	pointer_default(unique),
+    uuid (24E7B77E-433B-45A8-9579-7FBDE8B5C153),
+    version(1.0),
+    pointer_default(unique),
 ]
 interface NTService
 {
-	HRESULT StartServiceRpc([in, string] wchar_t *serviceName);
-	HRESULT StopServiceRpc([in, string] wchar_t *serviceName);
-	HRESULT QueryServiceRpc([in, string] wchar_t *serviceName, [out] INT32 *status);
+    HRESULT StartServiceRpc([in, string] wchar_t *serviceName);
+    HRESULT StopServiceRpc([in, string] wchar_t *serviceName);
+    HRESULT QueryServiceRpc([in, string] wchar_t *serviceName, [out] INT32 *status);
+    HRESULT SetServiceStartModeRpc([in, string] wchar_t *serviceName, [in] INT32 mode);
 }

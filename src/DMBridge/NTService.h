@@ -23,7 +23,8 @@ class NTService
 public:
 	static HRESULT Start(_In_ const std::wstring&);
 	static HRESULT Stop(_In_ const std::wstring&);
-	static HRESULT Query(_In_ const std::wstring&, _Outptr_ INT32* status);
+    static HRESULT Query(_In_ const std::wstring&, _Outptr_ INT32* status);
+    static HRESULT SetStartMode(_In_ const std::wstring&, _In_ INT32 status);
 
 	static void ApplyConfig(std::unique_ptr<NTServiceConfig>& config)
 	{
