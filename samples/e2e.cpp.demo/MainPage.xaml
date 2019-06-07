@@ -24,6 +24,8 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -38,6 +40,25 @@
             <Border Grid.Row="6" Grid.Column="1" Margin="5" Background="#3F3F46" BorderThickness="2" BorderBrush="#1B1B1D">
                 <Image x:Name="QrImage"/>
             </Border>
+            <TextBlock Grid.Row="8" Grid.Column="0" Margin="5" Text="IoT Hub Service"/>
+            <Grid Grid.Row="8" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Margin="5" x:Name="ServiceNameBox"/>
+                <ComboBox Grid.Column="1" Margin="5" Width="135" x:Name="ServiceStartTypeCombobox">
+                    <ComboBoxItem>Auto</ComboBoxItem>
+                    <ComboBoxItem>Boot</ComboBoxItem>
+                    <ComboBoxItem>Demand</ComboBoxItem>
+                    <ComboBoxItem>System</ComboBoxItem>
+                    <ComboBoxItem>Disabled</ComboBoxItem>
+                </ComboBox>
+                <Button Grid.Column="2" Margin="5" Width="135" Content="Set" Click="OnSetServiceStartType"/>
+                <TextBlock Grid.Column="3" Margin="5" x:Name="StatusBox" />
+            </Grid>
         </Grid>
     </Grid>
 </Page>

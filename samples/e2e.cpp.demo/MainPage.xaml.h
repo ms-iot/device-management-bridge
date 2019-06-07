@@ -43,6 +43,10 @@ namespace e2e_cpp_demo
             Platform::Object^ sender,
             Windows::UI::Xaml::RoutedEventArgs^ e);
 
+        void OnSetServiceStartType(
+            Platform::Object^ sender,
+            Windows::UI::Xaml::RoutedEventArgs^ e);
+
         std::wstring WriteLocalFile(
             const std::string& content,
             const std::wstring& fileName);

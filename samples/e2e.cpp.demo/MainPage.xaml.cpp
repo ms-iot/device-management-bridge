@@ -40,6 +40,16 @@ using namespace std;
 
 using namespace DMBridgeComponent;
 
+// https://docs.microsoft.com/en-us/windows/desktop/api/winsvc/nf-winsvc-changeserviceconfiga
+enum ServiceStartType
+{
+    SERVICE_START_AUTO = 0x00000002,
+    SERVICE_START_BOOT = 0x00000000,
+    SERVICE_START_DEMAND = 0x00000003,
+    SERVICE_DISABLED_ = 0x00000004,
+    SERVICE_START_SYSTEM = 0x00000001
+};
+
 wstring MultibyteToWide(const char* s)
 {
     size_t length = s ? strlen(s) : 0;
@@ -142,4 +152,42 @@ void MainPage::OnReadTPMInfo(
     Uri^ uri = ref new Uri(ref new Platform::String(fullFileName.c_str()));
     SvgImageSource^ svgImageSource = ref new SvgImageSource(uri);
     QrImage->Source = svgImageSource;
+}
+
+void e2e_cpp_demo::MainPage::OnSetServiceStartType(
+    Platform::Object^ sender,
+    Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    NTServiceBridge^ ntServiceBridge = ref new NTServiceBridge();
+
+    int startType = 0;
+    switch (ServiceStartTypeCombobox->SelectedIndex)
+    {
+    case 0: // auto
+        startType = (int)ServiceStartType::SERVICE_START_AUTO;
+        break;
+    case 1:
+        startType = (int)ServiceStartType::SERVICE_START_BOOT;
+        break;
+    case 2:
+        startType = (int)ServiceStartType::SERVICE_START_DEMAND;
+        break;
+    case 3:
+        startType = (int)ServiceStartType::SERVICE_START_SYSTEM;
+        break;
+    case 4:
+        startType = (int)ServiceStartType::SERVICE_DISABLED_;
+        break;
+    }
+
+    try
+    {
+        StatusBox->Text = "...";
+        ntServiceBridge->SetStartMode(ServiceNameBox->Text, startType);
+        StatusBox->Text = "Success";
+    }
+    catch (Platform::Exception^ e)
+    {
+        StatusBox->Text = e->Message;
+    }
 }
