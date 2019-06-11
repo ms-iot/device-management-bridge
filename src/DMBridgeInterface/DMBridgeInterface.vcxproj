@@ -41,6 +41,12 @@
     <Midl Include="TpmInterface.idl">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </Midl>
+    <Midl Include="ShutdownMgmtInterface.idl">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </Midl>
+    <Midl Include="UwpAppMgmtInterface.idl">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </Midl>
     <Midl Include="DMBridgeInterface.idl">
       <GenerateClientFiles>Stub</GenerateClientFiles>
       <ClientStubFile>DMBridgeInterface_$(Platform)_c.c</ClientStubFile>

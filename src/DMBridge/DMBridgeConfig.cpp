@@ -49,7 +49,9 @@ map<wstring, RPC_IF_HANDLE, Utils::CaseInsensitiveLess> DMBridgeConfig::MakeInte
 		{ L"computername", ComputerName_v1_0_s_ifspec },
 		{ L"servicemanager", NTService_v1_0_s_ifspec },
         { L"telemetry", Telemetry_v1_0_s_ifspec},
-        { L"tpm", Tpm_v1_0_s_ifspec}
+        { L"tpm", Tpm_v1_0_s_ifspec},
+        { L"shutdownmgmt", ShutdownMgmt_v1_0_s_ifspec},
+        { L"uwpappmgmt", UwpAppMgmt_v1_0_s_ifspec}
     };
 
 	return interfaceMap;

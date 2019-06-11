@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright 2018 Microsoft
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 and associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -13,25 +13,12 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#pragma once
-
-#include "App.g.h"
-
-namespace e2e_cpp_demo
+[
+	uuid (9AD3740F-FBA8-483A-A96C-9D8D8D7BC151),
+	version(1.0),
+	pointer_default(unique),
+]
+interface ShutdownMgmt
 {
-	/// <summary>
-	/// Provides application-specific behavior to supplement the default Application class.
-	/// </summary>
-	ref class App sealed
-	{
-	protected:
-		virtual void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e) override;
-
-	internal:
-		App();
-
-	private:
-		void OnSuspending(Platform::Object^ sender, Windows::ApplicationModel::SuspendingEventArgs^ e);
-		void OnNavigationFailed(Platform::Object ^sender, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs ^e);
-	};
+    HRESULT ShutdownRpc([in] INT32 delayInSeconds, [in] boolean restart);
 }

@@ -64,7 +64,7 @@ namespace winrt::DMBridgeComponent::implementation
     /// Retrieve the connection string from the TPM.
     /// <remarks>
     /// <returns>The connection string.</returns>
-    hstring TpmBridge::GetConnectionString(INT32 slot, int expiryInSeconds)
+    hstring TpmBridge::GetConnectionString(INT32 slot, INT32 expiryInSeconds)
     {
         wchar_t* csPtr = NULL;
         int size = 0;

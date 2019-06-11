@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright 2018 Microsoft
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 and associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -14,3 +14,17 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 #include "pch.h"
+#include "ShutdownMgmtBridge.h"
+#include "RpcUtilities.h"
+
+using namespace winrt;
+using namespace RpcUtils;
+
+namespace winrt::DMBridgeComponent::implementation
+{
+    void ShutdownMgmtBridge::Shutdown(INT32 delayInSeconds, boolean restart)
+    {
+        check_hresult(
+            RpcNormalize(::ShutdownRpc, this->rpcBinding, delayInSeconds, restart));
+    }
+}

@@ -23,6 +23,12 @@
     <Midl Include="TpmInterface.idl">
       <Filter>API</Filter>
     </Midl>
+    <Midl Include="ShutdownMgmtInterface.idl">
+      <Filter>API</Filter>
+    </Midl>
+    <Midl Include="UwpAppMgmtInterface.idl">
+      <Filter>API</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RpcConstants.h" />

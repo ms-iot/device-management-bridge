@@ -168,6 +168,14 @@
       <DependentUpon>TpmBridge.idl</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="ShutdownMgmtBridge.h">
+      <DependentUpon>ShutdownMgmtBridge.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="UwpAppMgmtBridge.h">
+      <DependentUpon>UwpAppMgmtBridge.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\DMBridgeInterface\DMBridgeInterface_$(Platform)_c.c">
@@ -205,6 +213,14 @@
       <DependentUpon>TpmBridge.idl</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="ShutdownMgmtBridge.cpp">
+      <DependentUpon>ShutdownMgmtBridge.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="UwpAppMgmtBridge.cpp">
+      <DependentUpon>UwpAppMgmtBridge.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ComputerNameBridge.idl">
@@ -217,6 +233,12 @@
       <SubType>Designer</SubType>
     </Midl>
     <Midl Include="TpmBridge.idl">
+      <SubType>Designer</SubType>
+    </Midl>
+    <Midl Include="ShutdownMgmtBridge.idl">
+      <SubType>Designer</SubType>
+    </Midl>
+    <Midl Include="UwpAppMgmtBridge.idl">
       <SubType>Designer</SubType>
     </Midl>
   </ItemGroup>

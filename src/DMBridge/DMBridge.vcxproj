@@ -258,6 +258,8 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TelemetryLevel.h" />
     <ClInclude Include="Tpm.h" />
+    <ClInclude Include="ShutdownMgmt.h" />
+    <ClInclude Include="UwpAppMgmt.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\DMBridgeInterface\DMBridgeInterface_$(Platform)_s.c">
@@ -286,6 +288,8 @@
     </ClCompile>
     <ClCompile Include="TelemetryLevel.cpp" />
     <ClCompile Include="Tpm.cpp" />
+    <ClCompile Include="ShutdownMgmt.cpp" />
+    <ClCompile Include="UwpAppMgmt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DMBridgeInterface\DMBridgeInterface.vcxproj">

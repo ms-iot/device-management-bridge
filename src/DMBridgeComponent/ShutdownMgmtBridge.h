@@ -12,23 +12,22 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+
 #pragma once
 
-#include "TpmBridge.g.h"
+#include "ShutdownMgmtBridge.g.h"
 #include "RpcUtilities.h"
 
 namespace winrt::DMBridgeComponent::implementation
 {
-    struct TpmBridge : TpmBridgeT<TpmBridge>
+    struct ShutdownMgmtBridge : ShutdownMgmtBridgeT<ShutdownMgmtBridge>
     {
-        TpmBridge() {
+        ShutdownMgmtBridge() {
             check_win32(
                 RpcUtils::RpcBind(&this->rpcBinding));
         };
 
-        winrt::hstring GetEndorsementKey();
-        winrt::hstring GetRegistrationId();
-        winrt::hstring GetConnectionString(INT32 slot, INT32 expiryInSeconds);
+        void Shutdown(INT32 delayInSeconds, boolean restart);
 
         void Close()
         {
@@ -42,7 +41,7 @@ namespace winrt::DMBridgeComponent::implementation
 
 namespace winrt::DMBridgeComponent::factory_implementation
 {
-    struct TpmBridge : TpmBridgeT<TpmBridge, implementation::TpmBridge>
+    struct ShutdownMgmtBridge : ShutdownMgmtBridgeT<ShutdownMgmtBridge, implementation::ShutdownMgmtBridge>
     {
     };
 }

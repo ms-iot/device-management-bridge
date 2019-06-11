@@ -69,6 +69,12 @@
     <ClInclude Include="Tpm.h">
       <Filter>Header Files\API</Filter>
     </ClInclude>
+    <ClInclude Include="ShutdownMgmt.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="UwpAppMgmt.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -105,6 +111,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tpm.cpp">
+      <Filter>Source Files\API</Filter>
+    </ClCompile>
+    <ClCompile Include="ShutdownMgmt.cpp">
+      <Filter>Source Files\API</Filter>
+    </ClCompile>
+    <ClCompile Include="UwpAppMgmt.cpp">
       <Filter>Source Files\API</Filter>
     </ClCompile>
   </ItemGroup>

@@ -12,37 +12,21 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#pragma once
 
-#include "TpmBridge.g.h"
+#include "pch.h"
+#include "UwpAppMgmtBridge.h"
 #include "RpcUtilities.h"
+
+using namespace winrt;
+using namespace RpcUtils;
 
 namespace winrt::DMBridgeComponent::implementation
 {
-    struct TpmBridge : TpmBridgeT<TpmBridge>
+    void UwpAppMgmtBridge::SetAppStartup(winrt::hstring pkgFamilyName, INT32 startupType)
     {
-        TpmBridge() {
-            check_win32(
-                RpcUtils::RpcBind(&this->rpcBinding));
-        };
+        const wchar_t* cName = const_cast<wchar_t*>(pkgFamilyName.c_str());
 
-        winrt::hstring GetEndorsementKey();
-        winrt::hstring GetRegistrationId();
-        winrt::hstring GetConnectionString(INT32 slot, INT32 expiryInSeconds);
-
-        void Close()
-        {
-            RpcUtils::RpcCloseBinding(&this->rpcBinding);
-        };
-
-    private:
-        RPC_BINDING_HANDLE rpcBinding = nullptr;
-    };
-}
-
-namespace winrt::DMBridgeComponent::factory_implementation
-{
-    struct TpmBridge : TpmBridgeT<TpmBridge, implementation::TpmBridge>
-    {
-    };
+        check_hresult(
+            RpcNormalize(::SetAppStartupRpc, this->rpcBinding, cName, startupType));
+    }
 }

@@ -12,37 +12,19 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#pragma once
 
-#include "TpmBridge.g.h"
-#include "RpcUtilities.h"
-
-namespace winrt::DMBridgeComponent::implementation
+namespace DMBridgeComponent
 {
-    struct TpmBridge : TpmBridgeT<TpmBridge>
+    [default_interface]
+    runtimeclass UwpAppMgmtBridge : IUwpAppMgmt, Windows.Foundation.IClosable
     {
-        TpmBridge() {
-            check_win32(
-                RpcUtils::RpcBind(&this->rpcBinding));
-        };
+        UwpAppMgmtBridge();
+    }
 
-        winrt::hstring GetEndorsementKey();
-        winrt::hstring GetRegistrationId();
-        winrt::hstring GetConnectionString(INT32 slot, INT32 expiryInSeconds);
-
-        void Close()
-        {
-            RpcUtils::RpcCloseBinding(&this->rpcBinding);
-        };
-
-    private:
-        RPC_BINDING_HANDLE rpcBinding = nullptr;
-    };
-}
-
-namespace winrt::DMBridgeComponent::factory_implementation
-{
-    struct TpmBridge : TpmBridgeT<TpmBridge, implementation::TpmBridge>
+    [version(1.0)]
+    [uuid(6644104D-A8CC-4370-A570-240FE6498FAA)]
+    interface IUwpAppMgmt : IInspectable
     {
-    };
+        HRESULT SetAppStartup([in] HSTRING pkgFamilyName,[in] INT32 startupType);
+    }
 }

@@ -20,3 +20,5 @@ import "unknwn.idl";
 #include "ComputerNameInterface.idl"
 #include "TelemetryInterface.idl"
 #include "TpmInterface.idl"
+#include "ShutdownMgmtInterface.idl"
+#include "UwpAppMgmtInterface.idl"

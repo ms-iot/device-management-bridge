@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright 2018 Microsoft
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 and associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -13,9 +13,18 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#pragma once
+namespace DMBridgeComponent
+{
+    [default_interface]
+    runtimeclass ShutdownMgmtBridge : IShutdownMgmt, Windows.Foundation.IClosable
+    {
+        ShutdownMgmtBridge();
+    }
 
-#include <collection.h>
-#include <ppltasks.h>
-
-#include "App.xaml.h"
+    [version(1.0)]
+    [uuid(F8D8074A-CC23-4B12-B7D0-0091BFD7A1F7)]
+    interface IShutdownMgmt : IInspectable
+    {
+        HRESULT Shutdown([in] INT32 delayInSeconds, [in] boolean restart);
+    }
+}

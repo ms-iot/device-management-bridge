@@ -14,21 +14,19 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 #pragma once
 
-#include "TpmBridge.g.h"
+#include "UwpAppMgmtBridge.g.h"
 #include "RpcUtilities.h"
 
 namespace winrt::DMBridgeComponent::implementation
 {
-    struct TpmBridge : TpmBridgeT<TpmBridge>
+    struct UwpAppMgmtBridge : UwpAppMgmtBridgeT<UwpAppMgmtBridge>
     {
-        TpmBridge() {
+        UwpAppMgmtBridge() {
             check_win32(
                 RpcUtils::RpcBind(&this->rpcBinding));
         };
 
-        winrt::hstring GetEndorsementKey();
-        winrt::hstring GetRegistrationId();
-        winrt::hstring GetConnectionString(INT32 slot, INT32 expiryInSeconds);
+        void SetAppStartup(winrt::hstring pkgFamilyName, INT32 startupType);
 
         void Close()
         {
@@ -42,7 +40,7 @@ namespace winrt::DMBridgeComponent::implementation
 
 namespace winrt::DMBridgeComponent::factory_implementation
 {
-    struct TpmBridge : TpmBridgeT<TpmBridge, implementation::TpmBridge>
+    struct UwpAppMgmtBridge : UwpAppMgmtBridgeT<UwpAppMgmtBridge, implementation::UwpAppMgmtBridge>
     {
     };
 }
