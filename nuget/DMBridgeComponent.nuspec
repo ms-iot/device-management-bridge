@@ -11,9 +11,6 @@
     <tags>UWP Device Management IoT Device Windows Store Applications</tags>
     <language>en-US</language>
 
-    <dependencies>
-      <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.1.12" />
-    </dependencies>
      <references>
           <reference file="DMBridgeComponent.winmd"/>
     </references>
@@ -27,6 +24,7 @@
 
     <!-- Build-time -->
     <file src="DMBridgeComponent.targets" target="build\uap10.0"/>
+    <file src="DMBridgeComponent.targets" target="build\native"/>
 
     <!-- x86  -->
     <file src="..\src\bin\Win32\$Flavor$\DMBridgeComponent.dll" target="build\uap10.0\x86" />
@@ -42,6 +40,11 @@
     <file src="..\src\bin\ARM\$Flavor$\DMBridgeComponent.dll" target="build\uap10.0\arm" />
     <file src="..\src\bin\ARM\$Flavor$\DMBridgeComponent.winmd" target="build\uap10.0\arm" />
     <file src="..\src\bin\ARM\$Flavor$\DMBridgeComponent.pri" target="build\uap10.0\arm" />
+
+    <!-- native -->
+    <file src="..\src\bin\Win32\$Flavor$\DMBridgeComponent.dll" target="build\native\Win32\Debug" />
+    <file src="..\src\bin\x64\$Flavor$\DMBridgeComponent.dll" target="build\native\x64\Debug" />
+    <file src="..\src\bin\ARM\$Flavor$\DMBridgeComponent.dll" target="build\native\arm\Debug" />
 
     <!-- Run-time -->
 
